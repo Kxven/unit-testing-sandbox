@@ -1,13 +1,15 @@
 package testing.automatictestswithspring;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@DisplayName("Test Math Operatios in SimpleMath Class")
 class SimpleMathTest {
 
     @Test
+    @DisplayName("Test 6.2 + 2 = 8.2")
     void testSum(){
         SimpleMath math = new SimpleMath();
         Double firstNumber = 6.2D;
@@ -22,6 +24,7 @@ class SimpleMathTest {
     }
 
     @Test
+    @DisplayName("Test 6.2 - 2 = 4.2")
     void testSubtraction(){
         SimpleMath math = new SimpleMath();
         Double firstNumber = 6.2D;
@@ -35,6 +38,7 @@ class SimpleMathTest {
     }
 
     @Test
+    @DisplayName("6.2 * 2  = 12.4 ")
     void testMultiplication(){
         SimpleMath math = new SimpleMath();
         Double firstNumber = 6.2D;
@@ -48,6 +52,7 @@ class SimpleMathTest {
     }
 
     @Test
+    @DisplayName("Test 6.2 / 2 = 3.1")
     void testDivision(){
         SimpleMath math = new SimpleMath();
         Double firstNumber = 6.2D;
@@ -61,6 +66,7 @@ class SimpleMathTest {
     }
 
     @Test
+    @DisplayName("Test (6.2 + 2) / 2  = 4.1 ")
     void testMean(){
         SimpleMath math = new SimpleMath();
         Double firstNumber = 6.2D;
@@ -74,6 +80,7 @@ class SimpleMathTest {
     }
 
     @Test
+    @DisplayName("Test Square Root of 81 = 9")
     void testsquareRoot(){
         SimpleMath math = new SimpleMath();
         Double number = 25D;
