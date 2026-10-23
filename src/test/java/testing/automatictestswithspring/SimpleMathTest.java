@@ -1,6 +1,7 @@
 package testing.automatictestswithspring;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,13 +12,34 @@ class SimpleMathTest {
     @Test
     @DisplayName("Test 6.2 + 2 = 8.2")
     void testSum(){
+        //Given / Arrange
         SimpleMath math = new SimpleMath();
         Double firstNumber = 6.2D;
         Double secondeNumber = 2D;
-
-        Double actual = math.sum(firstNumber, secondeNumber);
         Double expect = 8.2D;
 
+        //When /Act
+        Double actual = math.sum(firstNumber, secondeNumber);
+
+        //Then /Assert
+        Assertions.assertEquals(expect, actual, () -> firstNumber + " + " + secondeNumber + " not produce " + expect);
+        Assertions.assertNotEquals(9.1D, actual);
+        Assertions.assertNotNull(actual);
+    }
+    @Disabled("TODO: I need still work on it")
+    @Test
+    @DisplayName("Test 6.2 + 2 = 8.2")
+    void testSumExampleDisabled(){
+        //Given / Arrange
+        SimpleMath math = new SimpleMath();
+        Double firstNumber = 6.2D;
+        Double secondeNumber = 2D;
+        Double expect = 8.2D;
+
+        //When /Act
+        Double actual = math.sum(firstNumber, secondeNumber);
+
+        //Then /Assert
         Assertions.assertEquals(expect, actual, () -> firstNumber + " + " + secondeNumber + " not produce " + expect);
         Assertions.assertNotEquals(9.1D, actual);
         Assertions.assertNotNull(actual);
