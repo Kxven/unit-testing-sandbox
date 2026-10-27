@@ -46,5 +46,4 @@ class ContaBancariaTest {
         });
         assertEquals(50.0, conta.getSaldo());
     }
-
 }

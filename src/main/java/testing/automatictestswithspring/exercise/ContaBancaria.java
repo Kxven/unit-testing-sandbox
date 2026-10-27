@@ -25,11 +25,3 @@ public class ContaBancaria {
         return saldo;
     }
 }
-
-//Escreva testes para:
-//
-//Criar conta com saldo -100 lança IllegalArgumentException
-//Sacar 0 lança IllegalArgumentException
-//Sacar -50 lança IllegalArgumentException
-//Sacar 500 de uma conta com 100 lança IllegalStateException
-//Bônus: sacar 50 de uma conta com 100 não lança exceção e o saldo final é 50 (use assertDoesNotThrow e assertEquals)

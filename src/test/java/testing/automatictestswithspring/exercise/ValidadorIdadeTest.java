@@ -33,6 +33,4 @@ class ValidadorIdadeTest {
     void testAge0IsNotofLegalAge(){
         Assertions.assertFalse(validadorIdade.ehMaiorDeIdade(0));
     }
-
-
 }
