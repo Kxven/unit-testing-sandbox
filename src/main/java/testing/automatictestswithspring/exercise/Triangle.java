@@ -1,9 +1,9 @@
 package testing.automatictestswithspring.exercise;
 
-public class Triangulo {
-    public boolean ehValido(double a, double b, double c){
+public class Triangle {
+    public boolean isValid(double a, double b, double c){
         if(a <=0 || b <= 0 || c <=0){
-          throw new IllegalArgumentException("The sides should ");
+          throw new IllegalArgumentException("the sides must be greater than zero");
         }
         return a + b > c && a + c > b && b + c > a;
     }

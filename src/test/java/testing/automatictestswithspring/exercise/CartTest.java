@@ -5,56 +5,56 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CarrinhoTest {
-    private Carrinho carrinho;
+class CartTest {
+    private Cart cart;
     @BeforeEach
         void setUp(){
-        carrinho = new Carrinho();
+        cart = new Cart();
     }
     @Test
     void testNewCartShouldBeEmpty() {
-        assertTrue(carrinho.estaVazio());
+        assertTrue(cart.isEmpty());
     }
     @Test
     void testAfterAddBookcartcannotBeEmpty(){
-        carrinho.adicionar("Book");
-        assertFalse(carrinho.estaVazio());
+        cart.add("Book");
+        assertFalse(cart.isEmpty());
     }
     @Test
     void testAfterPutBookContainsIsTrue(){
-        carrinho.adicionar("Book");
-        assertTrue(carrinho.contem("Book"));
+        cart.add("Book");
+        assertTrue(cart.contains("Book"));
     }
     @Test
     void testWhenContainsPenInACartWithoutAPenIsFalse(){
-        carrinho.adicionar("Book");
-        assertFalse(carrinho.contem("Pen"));
+        cart.add("Book");
+        assertFalse(cart.contains("Pen"));
     }
     @Test
     void addingNullThrowsIllegalArgumentException(){
         assertThrows(IllegalArgumentException.class, () ->{
-            carrinho.adicionar(null);
+            cart.add(null);
         });
     }
 
     @Test
     void addStringEmptyThrowsIllegalArgumentException(){
         assertThrows(IllegalArgumentException.class, ()->{
-            carrinho.adicionar("   ");
+            cart.add("   ");
         });
     }
     @Test
     void dropAnItemThatIsNotInTheCarThrowsIllegalStateException(){
-        carrinho.adicionar("Pen");
+        cart.add("Pen");
         assertThrows(IllegalStateException.class,() ->{
-            carrinho.remover("Book");
+            cart.remove("Book");
         });
     }
     @Test
     void AddAndAfterRemoveBookLeaveTheCartEmpty(){
-        carrinho.adicionar("book");
-        carrinho.remover("book");
-        assertTrue(carrinho.estaVazio());
+        cart.add("book");
+        cart.remove("book");
+        assertTrue(cart.isEmpty());
     }
 
 }

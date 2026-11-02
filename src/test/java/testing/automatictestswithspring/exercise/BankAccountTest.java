@@ -1,49 +1,48 @@
 package testing.automatictestswithspring.exercise;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ContaBancariaTest {
+class BankAccountTest {
 
     @Test
     void testShouldThrowErrorWhenCreatingAccountWithNegativeBalance(){
         assertThrows(IllegalArgumentException.class, () -> {
-                new ContaBancaria(-100);
+                new BankAccount(-100);
         });
     }
 
     @Test
     void testShouldThrowErrorWhenWhiteDrawingZero(){
-        ContaBancaria conta = new ContaBancaria(100);
+        BankAccount account = new BankAccount(100);
         assertThrows(IllegalArgumentException.class, ()->{
-            conta.sacar(0);
+            account.withdraw(0);
         });
     }
 
     @Test
     void testShouldThrowErrorWhenWhiteDrawingNegativeAmouth(){
-        ContaBancaria conta = new ContaBancaria(100);
+        BankAccount account = new BankAccount(100);
         assertThrows(IllegalArgumentException.class, () ->{
-            conta.sacar(-50);
+            account.withdraw(-50);
         });
     }
 
     @Test
     void testShouldThrowErrorWhenBalanceIsInsulfficient(){
-        ContaBancaria conta = new ContaBancaria(100);
+        BankAccount account = new BankAccount(100);
         assertThrows(IllegalStateException.class, () ->{
-            conta.sacar(500);
+            account.withdraw(500);
         });
     }
 
     @Test
     void testShouldDrawingSuccessfullyAndUpdateBalance(){
-        ContaBancaria conta = new ContaBancaria(100);
+        BankAccount account = new BankAccount(100);
         assertDoesNotThrow(() -> {
-            conta.sacar(50);
+            account.withdraw(50);
         });
-        assertEquals(50.0, conta.getSaldo());
+        assertEquals(50.0, account.getBalance());
     }
 }
