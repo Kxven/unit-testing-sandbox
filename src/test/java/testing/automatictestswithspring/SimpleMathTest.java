@@ -116,7 +116,4 @@ class SimpleMathTest {
         Assertions.assertNotNull(actual);
 
     }
-
-
-
 }
