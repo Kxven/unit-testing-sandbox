@@ -1,4 +1,4 @@
-package testing.automatictestswithspring;
+package testing.automatictestswithspring.exercise.simpleMath;
 
 public class SimpleMath {
 

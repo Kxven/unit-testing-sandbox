@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import testing.automatictestswithspring.SimpleMath;
+import testing.automatictestswithspring.exercise.simpleMath.SimpleMath;
 
 public class TestesParametrizadosComCSV {
 

@@ -1,11 +1,11 @@
-package testing.automatictestswithspring;
+package testing.automatictestswithspring.simpleMath;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import testing.automatictestswithspring.exercise.simpleMath.SimpleMath;
 
-import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Test Math Operatios in SimpleMath Class")
 class SimpleMathTest {
 
