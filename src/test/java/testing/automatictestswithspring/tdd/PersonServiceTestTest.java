@@ -46,6 +46,8 @@ class PersonServiceTestTest {
         Person actual = service.createPerson(person);
 
         // then
+        assertNotNull(person.getId(), ()-> "Person ID is missing");
+
         assertNotNull(actual, () -> "The create person should not have returned null");
 
         assertEquals(person.getFirstname(),  actual.getFirstname(), ()-> "The first name is diferent");
