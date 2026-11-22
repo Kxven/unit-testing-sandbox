@@ -61,4 +61,22 @@ class PersonServiceTestTest {
         assertEquals(person.getGender(), actual.getGender(), ()-> "The last name is diferent");
     }
 
+    @Test
+    @DisplayName("When create a person with sucess should contains valid fields in returned person Object")
+    void testCreatePerson_WhithNullEmail_ShouldThrowIllegalArgumentExpection() {
+        // given
+        IPersonService service = new PersonService();
+
+        // when
+        Person actual = service.createPerson(person);
+        person.setEmail(null);
+
+        // then
+        assertThrows(IllegalArgumentException.class,
+                ()-> service.createPerson(person),
+                () -> "Empty e-Email should have cause an IllegalArgumentException"
+        );
+    }
+
+
 }
