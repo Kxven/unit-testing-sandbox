@@ -78,5 +78,23 @@ class PersonServiceTestTest {
         );
     }
 
+    @Test
+    @DisplayName("When create a person with sucess should contains same string equals the class person in returned person Object")
+    void testCreatePerson_MessageShouldThrowEquakMessage() {
+        // given
+        IPersonService service = new PersonService();
+
+        // when
+        Person actual = service.createPerson(person);
+        person.setEmail(null);
+        var expected = "The person e-mail is null or empty";
+
+        IllegalArgumentException message = assertThrows(IllegalArgumentException.class,
+                ()-> service.createPerson(person),
+                () -> "Empty e-Email should have cause an IllegalArgumentException"
+        );
+        assertEquals(expected, message.getMessage(), ()-> "The message is diferent");
+    }
+
 
 }
